@@ -10,6 +10,6 @@
 </head>
 <body>
     @include('parts.navigation')
-    @yield('content')
+    <div class="p-4">@yield('content')</div>
 </body>
 </html>
