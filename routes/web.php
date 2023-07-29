@@ -16,5 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'pages.home', ['articles' => Article::all()]);
+Route::view('/about', 'pages.about');
 
 require __DIR__.'/auth.php';
