@@ -9,7 +9,15 @@
                 <li class="mr-4 ml-auto"><a href="/categories">Categories</a></li>
                 <li class="mr-4"><a href="/tags">Tags</a></li>
                 <li class="mr-4"><a href="/posts">Posts</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li>
+                    <a href="/logout"
+                       onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+                    <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                        @csrf
+                    </form>
+                </li>
             @endif
         </ul>
     </nav>
