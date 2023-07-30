@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Article;
 use Illuminate\Support\Facades\Route;
@@ -15,7 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'pages.home', ['articles' => Article::all()]);
+Route::get('/', [ArticleController::class, 'index']);
 Route::view('/about', 'pages.about');
+
+Route::resource('articles', ArticleController::class);
+
 
 require __DIR__.'/auth.php';
