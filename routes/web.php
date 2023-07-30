@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TagController;
 use App\Models\Article;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,6 @@ Route::get('/', [ArticleController::class, 'index']);
 Route::view('/about', 'pages.about');
 
 Route::resource('articles', ArticleController::class);
-
+Route::resource('tags', TagController::class)->except('show');
 
 require __DIR__.'/auth.php';
