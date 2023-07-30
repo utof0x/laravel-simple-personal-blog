@@ -42,7 +42,7 @@ class TagController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('pages.edit-tag', ['tag' => Tag::find($id)]);
     }
 
     /**
@@ -50,7 +50,13 @@ class TagController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|unique:tags',
+        ]);
+
+        Tag::where('id', $id)->update(['name' => $request->name]);
+
+        return redirect('/tags');
     }
 
     /**
