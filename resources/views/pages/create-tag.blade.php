@@ -7,7 +7,12 @@
             @csrf
             <div class="mt-4">
                 <label for="name" class="@if($errors->any()) text-red-500 @endif">Tag name:</label>
-                <input type="text" id="name" name="name" class="ml-1 pl-1 border-solid border-2 border-black @if($errors->any()) border-red-500 text-red-500 @endif rounded">
+                <input type="text"
+                       id="name"
+                       name="name"
+                       value="{{ old('name') }}"
+                       class="ml-1 pl-1 border-solid border-2 border-black @if($errors->any()) border-red-500 text-red-500 @endif rounded"
+                >
             </div>
             @if ($errors->any())
                 <div class="alert alert-danger">
