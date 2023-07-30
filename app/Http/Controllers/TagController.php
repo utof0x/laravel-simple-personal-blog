@@ -58,6 +58,8 @@ class TagController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Tag::destroy($id);
+
+        return redirect('/tags');
     }
 }
