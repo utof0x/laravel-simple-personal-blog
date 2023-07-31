@@ -20,7 +20,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('pages.create-article');
+        return view('pages.articles.create');
     }
 
     /**
