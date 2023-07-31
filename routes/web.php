@@ -20,7 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ArticleController::class, 'index']);
 Route::view('/about', 'pages.about');
 
-Route::resource('articles', ArticleController::class);
-Route::resource('tags', TagController::class)->except('show');
+Route::middleware('auth')->group(function () {
+    Route::resource('articles', ArticleController::class);
+    Route::resource('tags', TagController::class)->except('show');
+});
 
 require __DIR__.'/auth.php';
