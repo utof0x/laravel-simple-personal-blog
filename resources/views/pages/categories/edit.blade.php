@@ -2,16 +2,16 @@
 
 @section('content')
     <div class="p-4 bg-gray-200">
-        Edit tag:
-        <form method="POST" action="{{ route('tags.update', $tag->id) }}">
+        Edit category:
+        <form method="POST" action="{{ route('categories.update', $category->id) }}">
             @method('PUT')
             @csrf
             <div class="mt-4">
-                <label for="name" class="@if($errors->any()) text-red-500 @endif">Tag name:</label>
+                <label for="name" class="@if($errors->any()) text-red-500 @endif">Category name:</label>
                 <input type="text"
                        id="name"
                        name="name"
-                       value="{{ $tag->name }}"
+                       value="{{ $category->name }}"
                        class="ml-1 pl-1 border-solid border-2 border-black @if($errors->any()) border-red-500 text-red-500 @endif rounded"
                 >
             </div>

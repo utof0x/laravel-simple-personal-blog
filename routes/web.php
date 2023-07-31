@@ -23,6 +23,8 @@ Route::view('/about', 'pages.about');
 Route::middleware('auth')->group(function () {
     Route::resource('articles', ArticleController::class);
     Route::resource('tags', TagController::class)->except('show');
+    Route::resource('categories', \App\Http\Controllers\CategoryController::class)
+        ->except('show');
 });
 
 require __DIR__.'/auth.php';
