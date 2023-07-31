@@ -12,7 +12,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        return view('pages.tags', ['tags' => Tag::all()]);
+        return view('pages.tags.index', ['tags' => Tag::all()]);
     }
 
     /**
@@ -20,7 +20,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        return view('pages.create-tag');
+        return view('pages.tags.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class TagController extends Controller
      */
     public function edit(string $id)
     {
-        return view('pages.edit-tag', ['tag' => Tag::find($id)]);
+        return view('pages.tags.edit', ['tag' => Tag::find($id)]);
     }
 
     /**
