@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TagController;
 use App\Models\Article;
 use Illuminate\Support\Facades\Route;
