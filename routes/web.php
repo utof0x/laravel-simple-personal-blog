@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ArticleController::class, 'index']);
+Route::view('/', 'pages.home', ['articles' => Article::all()]);
 Route::view('/about', 'pages.about');
 
 Route::middleware('auth')->group(function () {
